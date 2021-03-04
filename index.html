@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Daniel’s Web Type Class Site</title>
+  <title>Daniel’s Web Type Directory</title>
   <!-- this is where my meta-info lives, but won’t show up on the page itself-->
 
   <link rel="stylesheet" href="https://use.typekit.net/ppf4wxb.css">
@@ -15,18 +15,18 @@
 
       display: flex;
 
-      font-family: "base-mono-narrow";
-      font-weight: 300;
+      font-family: "times new roman", serif;
+      font-weight: 400;
 
   }
   #container{
-    color: white;
-    background-color: black;
-    width: 16em;
+    color: #ffdd00;
+    background-color: rgba(10,10,10,0.8);
+    width: auto;
     height: auto;
-    padding: 0.1em 1em 1em 1em;
-    margin-left: 3em;
-    margin-top: 2em;
+    padding: 1em 3em 2em 2em;
+    margin-left: 4em;
+    margin-top: 3em;
   }
 
     img{
@@ -37,8 +37,8 @@
     .aside{
       position: fixed; top: 2em; right: 3em; border: 0;
       padding: 1em;
-      color: white;
-       background-color: black;
+      color: #ffdd00;
+      background-color: black;
     }
     p{
       font-size: 0.8em;
@@ -50,6 +50,17 @@
     h3{
       font-weight: 400;
     }
+    a{
+      text-decoration: none;
+      color: #ffdd00;
+    }
+    a:visited{
+      text-decoration: none;
+      color: #ffdd00;
+    }
+    a:hover{
+      color: white;
+    }
 
   </style>
 
@@ -59,30 +70,26 @@
   <section id="container">
 
     <!-- about me-->
-    <h1>Daniel</h1>  
-    <p class="desc">about you...</p>
+    <h1>Daniel’s Web Type Directory</h1>  
+    <!-- <p class="desc">about you...</p> -->
     
     <!-- links to my work -->
     <div id="exercises">
-      <h3>Exercises</h3>
+      <h3>Project 1</h3>
       <ul>
-        <li><a href="#">EX 1</a></li>
+        <li><a href="https://www.figma.com/file/8VMvA80lDQ2pFpVZWJwob8/Sew-Space?node-id=0%3A1">Figma</a></li>
       </ul> 
     </div>
    
-    <div id="projects">
+    <!-- <div id="projects">
       <h3>Projects</h3>
       <ul>
         <li><a href="#">P1</a></li>
       </ul>
-    </div>
+    </div> -->
 
   </section>
 
-  <section class="aside">
-      <img src="goudy.png" alt="">
 
-      <p>Frederic Goudy with his Cat.</p>
-  </section>
 </body>
 </html>
