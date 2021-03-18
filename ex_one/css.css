@@ -1,0 +1,113 @@
+/* html{
+    font-size: 2vh;
+}
+     */
+body{
+    background-color: #333333;
+}
+
+.a1{
+    margin:4rem 0 0 4rem;
+    display: flex;
+    flex-direction: row;
+    height: 8rem;
+    width: 20rem;
+    align-items: flex-end;
+    /* justify-content: flex-end; */
+    /* position: relative; */
+
+}
+
+
+
+.b1{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    height: 8rem;
+    width: 20rem;
+    align-items: flex-end;
+    /* justify-content: flex-end; */
+    position: relative;
+
+}
+
+
+
+.b1 > div{
+    background-color: #dddd00;
+    align-items: flex-end;
+    position: relative;
+
+}
+
+.b1 *:hover{
+    background-color: #aa6600;
+}
+
+
+.stem{
+    width:2rem;
+    height: 6rem;
+    z-index: 1;
+}
+
+.asc{
+    height:8rem;
+}
+
+.bowl{
+    width: 4.5rem;
+    height: 6.4rem;
+    border-radius: 50%;
+    top: 0.2rem;
+    left: -0.3rem;
+}
+
+.counter{
+    width: 2.5rem;
+    height: 4.6rem;
+    border-radius: 50%;
+    top: -0.7rem;
+    left: -4.7rem;
+    background-color: #333 !important;
+}
+.counter:hover{
+    background-color: #555533 !important;
+}
+
+#b2{
+    left:200px;
+}
+
+.topstorey{
+    width: 5.7rem;
+    height: 3rem;
+    border-radius: 50%;
+    top: -3.2rem;
+    left: -5.7rem;
+}
+.bottomstorey{
+    width: 3.7rem;
+    height: 3rem;
+    border-radius: 50%;
+    border-top-right-radius: 0%;
+    top: 0rem;
+    left: 0rem;
+}
+#astem{
+    height:2rem !important;
+}
+
+.topstoreycnt{
+    width: 3.3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border-bottom-right-radius: 0;
+    top: -3rem;
+    left: -11rem;
+    background-color: #333 !important;
+}
+.topstoreycnt:hover{
+    background-color: #555533 !important;
+}

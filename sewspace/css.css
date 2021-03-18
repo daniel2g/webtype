@@ -22,13 +22,31 @@
     font-style: italic;
     font-weight: bold;
 }
+@font-face {
+    font-family: arialstd;
+    src: url(fonts/ArialMTStd.woff);
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: arialstd;
+    src: url(fonts/ArialMTStd-Bold.woff);
+    font-style: normal;
+    font-weight: bold;
+}
+@font-face {
+    font-family: arialmed;
+    src: url(fonts/ArialMTStd-Medium.woff);
+    font-style: normal;
+    font-weight: normal;
+}
 
 
 /* ----------SCALE FACTOR---------- */
 
-/* html{
-    font-size: 20px;
-} */
+html{
+    font-size: 24px;
+}
 
 
 
@@ -38,17 +56,18 @@
 
 body{
     margin: 0px;
-    background-color: #FFE194;
+    background-color: #ddd;
     font-family:'arialnarrow', sans-serif;
+
 }
 .header{
     width: 50rem;
     height: 30rem;
     margin: 0 auto 0 auto;
 
-    border-style: solid;
+    /* border-style: solid;
     border-width: 2px;
-    border-color: white;
+    border-color: white; */
     
     position: static;
 }
@@ -60,20 +79,25 @@ svg{
 
 .headertext{
     top: -20rem;
-    margin: 0rem 12rem 0rem 18rem;
+    margin: 0rem 11rem 0rem 17.5rem;
     position: relative;
     z-index: 10;
 }
 .subhead{
-    letter-spacing: 0.02rem;
-    font-size: 1.2rem;
+    font-family: 'arialmed';
+    font-weight: normal;
+    letter-spacing: 0rem;
+    line-height: 100%;
+    font-size: 1.14rem;
     transform-origin: center left;
-    transform:scale(1,1.5);
-    margin-top: 1rem;
+    transform:scale(1,2);
+    margin-top: 1.8rem;
     margin-bottom: 2rem;
 }
 .subsubhead{
-
+    font-style: italic;
+    margin: 2.7rem 6.3rem 0rem 1rem;
+    line-height: 140%;
 }
 
 
@@ -94,11 +118,20 @@ svg{
     fill: #64C9B1;
 }
 
+/* yellow:  #FFE194 */
+
 .dash{
     /* display: none; */
     stroke: #000000; 
     stroke-width: 0.5;
     stroke-dasharray: 5 2;
+}
+
+.cover{
+    display: none;
+    stroke: #fff; 
+    stroke-width: 1;
+    stroke-dasharray: 10 1;
 }
 
 
@@ -111,70 +144,152 @@ svg{
     width: 50rem;
     margin: 0 auto 0 auto;
 
-    border-style: solid;
+    /* border-style: solid;
     border-width: 2px;
-    border-color: #ddddff;
+    border-color: #ddddff; */
 
     display: flex;
     flex-direction: row;
 }
 
 .openhours{
-    margin:1rem 1.5rem 1rem 1rem;
-    width: 40%;
-    font-style: italic;
+    color: #0055bb;
+    margin:1rem 1.5rem 1rem 10rem;
+    width: 12rem;
+    position: relative;
 }
 
 .workshops{
-    margin:1rem 1rem 1rem 1.5rem;
-    width:60%;
+    margin:1rem 1rem 1rem 5rem;
+    width:18rem;
 }
 
 
 h1{
     display: block; 
-    font-size: 2rem; 
-    margin-top: 0rem; 
-    margin-bottom: 0rem; 
-    margin-left: 0; 
-    margin-right: 0; 
     font-weight:normal;
-    margin-block-start: 0rem;
-    margin-block-end: 0rem;
-
-    letter-spacing: 0.03rem;
-    font-size: 1.5rem;
+    margin-block-start: 2.4rem;
+    margin-block-end: 0.8rem;
     transform-origin: center left;
-    transform:scale(1,1.5);
+    font-family: 'arialstd';
+    font-weight: bold;
+    letter-spacing: 0rem;
+    line-height: 100%;
+    font-size: 0.8rem;
+    transform-origin: center left;
+    transform:scale(1,2);
 }
 
 p{
-    margin-block-start: 0.5rem;
-    margin-block-end: 0.5rem;
+    margin-block-start: 0.2rem;
+    margin-block-end: 0.2rem;
     letter-spacing: 0.03rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 .hours{
-    text-transform: uppercase;
-    transform:scale(1,0.75);
+    font-style: italic;
+}
+
+.openhead{
+    font-size: 1.14rem;
+    font-family: 'arialmed';
+    font-weight: normal;
+
 }
 
 .wshead{
-
-}
-.wssubhead{
-
+    font-family: 'arialmed';
+    font-weight: normal;
+    letter-spacing: 0rem;
+    line-height: 100%;
+    font-size: 1.14rem;
+    transform-origin: center left;
+    transform:scale(1,2);
+    margin-top: 2.4rem;
+   
 }
 
 
 .wsbox{
-
+   margin-left: -1.2rem;
+   margin-block-end: -1.5rem;
+   
 }
-.wsboxtext{
+.wsboxtext1{
+    width: fit-content;
+    cursor: pointer;
     position: relative;
-    margin: -10rem 0 0 5rem;
+    margin: -6.95rem 0 0 3rem;
+}
+.wsboxtext2{
+    width: fit-content;
+    cursor: pointer;
+    position: relative;
+    margin: -6.7rem 0 0 3rem;
 }
 .wsname{
+    margin-block-start: 0rem;
+}
 
+#button{
+    fill:#fff;
+}
+
+#sewon{
+    /* visibility: hidden; */
+    pointer-events: none;
+    margin: -6rem 0 0 -1.2rem;
+    mix-blend-mode: darken;
+}
+
+
+
+/* -------Modal-------- */
+
+.modal-container{
+    display: none;
+    z-index: 100;
+    position: fixed;
+    top: 0rem;
+}
+.modal-background{
+    position: fixed;
+    z-index: -100;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #ddd;
+    opacity: 70%;
+}
+
+.modal-text{
+    top:50%; left:50%; 
+    transform: translate(-10.5rem,-7.25rem);
+    position: fixed;
+    z-index: 300;
+    width: 22rem;
+}
+
+.modal-title{
+    font-family: 'arialmed';
+    font-weight: normal;
+    letter-spacing: 0rem;
+    line-height: 100%;
+    font-size: 1.14rem;
+    transform-origin: center left;
+    transform:scale(1,2);
+    margin-top: 0;
+    margin-block-end: 1rem;
+   
+}
+
+.modal-desc{
+    margin-block-start: 0.5rem;
+    margin-block-end: 1.5rem;
+}
+
+.modal-foot{
+    font-size: 0.6rem;
 }
