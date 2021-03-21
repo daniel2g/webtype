@@ -51,6 +51,13 @@ html{
 
 
 
+
+
+
+
+
+
+
 /* ----------HEADER---------- */
 
 
@@ -87,6 +94,7 @@ svg{
     font-family: 'arialmed';
     font-weight: normal;
     letter-spacing: 0rem;
+    word-spacing: 0rem;
     line-height: 100%;
     font-size: 1.14rem;
     transform-origin: center left;
@@ -120,6 +128,34 @@ svg{
 
 /* yellow:  #FFE194 */
 
+#logo-dash{
+    stroke: #000000; 
+    fill: none;
+    stroke-width: 0.5;
+    stroke-dasharray: 6 1;
+}
+
+#logo-cover{
+    stroke: #000000; 
+    fill: none;
+    stroke: rgba(255, 255, 255, 1); 
+    stroke-width: 1;
+    stroke-dasharray: 2752;
+    stroke-dashoffset: 0;
+    animation: logo-animation 6s 
+    cubic-bezier(.67,.47,.84,.87)
+    forwards;
+}
+  
+@keyframes logo-animation {
+
+    to {
+      stroke-dashoffset: 2752;
+    }
+}
+
+
+
 .dash{
     /* display: none; */
     stroke: #000000; 
@@ -127,12 +163,47 @@ svg{
     stroke-dasharray: 5 2;
 }
 
-.cover{
-    display: none;
-    stroke: #fff; 
-    stroke-width: 1;
-    stroke-dasharray: 10 1;
+.dash2{
+    /* display: none; */
+    stroke: #000000; 
+    stroke-width: 0.5;
+    stroke-dasharray: 5 2;
 }
+
+.dash3{
+    /* display: none; */
+    stroke: #000000; 
+    stroke-width: 0.35;
+    stroke-dasharray: 3 1.2;
+}
+
+.footer{
+    z-index: -500;
+    width: 50rem;
+    margin: 0 auto 0 auto;    
+    position: relative;
+}
+
+.footer-svg{
+    width: 50rem;
+    margin: -3rem auto 0 auto;
+    fill: none;
+    stroke: #000000; 
+    stroke-width: 0.4;
+    stroke-dasharray: 4 1.5;
+}
+
+.footertext{
+    font-size: 0.6rem;
+    margin: -5.6rem 0 0 23.7rem;
+}
+
+
+
+
+
+
+
 
 
 
@@ -142,7 +213,7 @@ svg{
 
 .center{
     width: 50rem;
-    margin: 0 auto 0 auto;
+    margin: -1rem auto 0 auto;
 
     /* border-style: solid;
     border-width: 2px;
@@ -185,12 +256,14 @@ p{
     margin-block-end: 0.2rem;
     letter-spacing: 0.03rem;
     font-size: 0.8rem;
+    word-spacing: -0.05rem;
 }
 
 .zag{
     position: absolute;
     margin-top: 0.5rem;
-    left:-0.2rem;
+    left:-2rem;
+    width: 15rem;
     
 
 }
@@ -204,6 +277,10 @@ p{
     font-family: 'arialmed';
     font-weight: normal;
 
+}
+
+.address{
+    margin: -11.3rem 0 0 3.8rem;
 }
 
 .wshead{
@@ -251,12 +328,45 @@ p{
     mix-blend-mode: darken;
 }
 
+.cover{
+    /* display: none; */
+    stroke: rgba(255, 255, 255, 1); 
+    fill: none;
+    stroke-width: 2;
+    stroke-dasharray: 304;
+    stroke-dashoffset: 0;
+}
+
+.sewon-show{
+    animation: sewon-animation; 
+    animation-duration:  1s; 
+    animation-timing-function:  ease-in-out; 
+    animation-fill-mode: forwards;
+}
+  
+@keyframes sewon-animation {
+
+    to {
+      stroke-dashoffset: 303;
+    }
+}
+
+
+
+
+
+
+
+
 
 
 /* -------Modal-------- */
 
-.modal-container{
+.modal-hide{
     display: none;
+}
+
+.modal-container{
     z-index: 100;
     position: fixed;
     top: 0rem;
@@ -269,7 +379,7 @@ p{
     left: 0;
     bottom: 0;
     background-color: #ddd;
-    opacity: 70%;
+    opacity: 80%;
 }
 
 .modal-text{
@@ -300,4 +410,27 @@ p{
 
 .modal-foot{
     font-size: 0.6rem;
+}
+
+.crochet-overflow{
+    height: 8.5rem; 
+    overflow-y: scroll;
+    margin-block-start: 0.5rem;
+}
+
+.register{
+    position: fixed;
+    z-index: 500;
+    top:10.7rem;
+    left:15.3rem;
+    cursor: pointer;
+}
+.closebtn{
+    position: fixed;
+    z-index: 500;
+    top:-4.05rem;
+    left:20.4rem;
+    cursor: pointer;
+    font-family: 'arialnarrow';
+    transform: scale(2.2);
 }

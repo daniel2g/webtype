@@ -1,87 +1,76 @@
 $(document).ready(function(){
+
+    // ---------- MODALS ------------
     
+    $("#btn-basic").click(function(){
+        $(".modal-container").removeClass("modal-hide");
+        $("#mt-basic").removeClass("modal-hide");
+    });
 
-    document.getElementById("field").oninput = function(){
-        
-        var innerheight = document.getElementById("staticcontainer").clientHeight;
-        
-        // console.log('inner:' + innerheight);
-        
-        var outerheight = window.innerHeight;
+    $("#btn-zippers").click(function(){
+        $(".modal-container").removeClass("modal-hide");
+        $("#mt-zippers").removeClass("modal-hide");
+    });
 
-        // console.log('outer:' + outerheight);
+    $("#btn-hand").click(function(){
+        $(".modal-container").removeClass("modal-hide");
+        $("#mt-hand").removeClass("modal-hide");
+    });
 
-        if (innerheight > 0.85*outerheight) {
-            fontSize--;
+    $("#btn-crochet").click(function(){
+        $(".modal-container").removeClass("modal-hide");
+        $("#mt-crochet").removeClass("modal-hide");
+    });
 
-            $(".h").css("font-size", fontSize/2 + "vh");
-        };
+    $("#btn-doll").click(function(){
+        $(".modal-container").removeClass("modal-hide");
+        $("#mt-doll").removeClass("modal-hide");
+    });
 
-        if (fontSize < 28.6) {
-            $("br").addClass("hide");
-        };
-        
-        // console.log(fontSize);
 
-    };
+    function closeWindow() {
+        $(".modal-text").addClass("modal-hide");
+        $(".modal-container").addClass("modal-hide");
+    }
 
-    $(window).on('scroll', function(){
-        var s = $(window).scrollTop(),
-            d = $(document).height(),
-            c = $(window).height();
-      
-        var scrollPercent = (s / (d - c)) * 100;
-        
+    $(".closebtn").click(function(){
+        closeWindow();
+    });
 
-        // console.log(scrollPercent);
-
-        if (scrollPercent >= 80) {
-            $(".pub").removeClass("hidepub");
-          }
-        else { 
-            $(".pub").addClass("hidepub");
-        };
+    $(".register").click(function(){
+        closeWindow();
+    });
 
 
 
-      });
+    // ---------- SEW-ON ------------
 
-      $(".button").click(function(){
-        document.location.reload();
-      });
-      
+    // var sewonPath = document.getElementById("sewon-zippers");
+    // var pathLength = sewonPath.getTotalLength();
+    // console.log(pathLength);
+
+    $("#btn-basic").hover(function(){
+        $("#sewon-basic").addClass("sewon-show")
+    });
+
+    $("#btn-zippers").hover(function(){
+        $("#sewon-zippers").addClass("sewon-show")
+    });
+
+    $("#btn-hand").hover(function(){
+        $("#sewon-hand").addClass("sewon-show")
+    });
+
+    $("#btn-crochet").hover(function(){
+        $("#sewon-crochet").addClass("sewon-show")
+    });
+
+    $("#btn-doll").hover(function(){
+        $("#sewon-doll").addClass("sewon-show")
+    });
 
 
-      $(".bigpic").click(function(){
-        $(".bigpic").removeClass("animaterev");
-        $(".readingdiv").removeClass("animatetxtrev");
     
-        $(".bigpic").addClass("animate");
-        $(".readingdiv").addClass("animatetxt");
-    
-    
-    
-      });
-    
-      $(".readingdiv").click(function(){
-        $(".bigpic").removeClass("animate");
-        $(".readingdiv").removeClass("animatetxt");
-    
-        $(".bigpic").addClass("animaterev");
-        $(".readingdiv").addClass("animatetxtrev");
-    
-    
-      });
-      
-      $(".bigpic").hover(function(){
-        $(".bigpic").toggleClass("bighover");
-    
-      });
-     
-      $(".scrollbox").hover(function(){
-        $("html").toggleClass("showscroll");
-        
-      });
 
 
    
@@ -89,3 +78,4 @@ $(document).ready(function(){
 });
 
 
+// I  love Serena Shen! She's the BEST!! Find her at Serenashen.com
