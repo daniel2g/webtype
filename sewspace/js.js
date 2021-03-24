@@ -76,6 +76,3 @@ $(document).ready(function(){
    
 
 });
-
-
-// I  love Serena Shen! She's the BEST!! Find her at Serenashen.com

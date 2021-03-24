@@ -61,9 +61,24 @@ html{
 /* ----------HEADER---------- */
 
 
+::-webkit-scrollbar         {
+    width: 0.5rem; background-color: #d4d4d4;}
+::-webkit-scrollbar-thumb   {
+    background-color: #8450c4;
+    
+}
+::-webkit-scrollbar-track-piece{
+    background-color: #d4d4d4;
+}
+::-webkit-scrollbar-corner{
+    background-color: #d4d4d4;
+}
+
+
+
 body{
     margin: 0px;
-    background-color: #ddd;
+    background-color: #d4d4d4;
     font-family:'arialnarrow', sans-serif;
 
 }
@@ -104,7 +119,7 @@ svg{
 }
 .subsubhead{
     font-style: italic;
-    margin: 2.7rem 6.3rem 0rem 1rem;
+    margin: 2.7rem 2.5rem 0rem 4.8rem;
     line-height: 140%;
 }
 
@@ -114,16 +129,16 @@ svg{
     fill: #F4F4F4;
 }
 #rect2{
-    fill: #F8C4C4;
+    fill: #fbbdc5;
 }
 #rect3{
-    fill: #8727D2;
+    fill: #8450c4;
 }
 #tri1{
-    fill: #D29D5F;
+    fill: #b2ab80;
 }
 #circ1{
-    fill: #64C9B1;
+    fill: #31b3a4;
 }
 
 /* yellow:  #FFE194 */
@@ -194,6 +209,7 @@ svg{
 }
 
 .footertext{
+    color: #1558A5;
     font-size: 0.6rem;
     margin: -5.6rem 0 0 23.7rem;
 }
@@ -224,7 +240,7 @@ svg{
 }
 
 .openhours{
-    color: #0055bb;
+    color: #1558A5;
     margin:1rem 1.5rem 1rem 10rem;
     width: 12rem;
     position: relative;
@@ -280,7 +296,8 @@ p{
 }
 
 .address{
-    margin: -11.3rem 0 0 3.8rem;
+    color: black;
+    margin: -12.9rem 0 0 3.5rem;
 }
 
 .wshead{
@@ -318,7 +335,7 @@ p{
 }
 
 #button{
-    fill:#fff;
+    fill: #f4f4f4;
 }
 
 #sewon{
@@ -378,8 +395,8 @@ p{
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: #ddd;
-    opacity: 80%;
+    background-color: #d4d4d4;
+    opacity: 50%;
 }
 
 .modal-text{
@@ -433,4 +450,16 @@ p{
     cursor: pointer;
     font-family: 'arialnarrow';
     transform: scale(2.2);
+}
+
+
+
+
+
+/* ------MEDIA QUERY-------- */
+
+@media only screen and (max-width: 1270px){
+    html{
+        font-size: 1.9vw;
+    }
 }
