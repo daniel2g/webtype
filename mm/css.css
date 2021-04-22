@@ -315,6 +315,9 @@ b{
     .first_container{
         margin: 0em 1em 1em 1em;
     }
+    .first_container_fixed{
+        margin: 0em 1em 1em 1em;
+    }
     .first_container p{
         font-size: calc(1.5vw + 2.5vh);
     }
@@ -357,7 +360,7 @@ b{
             font-variation-settings: "wght" 100;
         }
         50%{
-            font-variation-settings: "wght" 450;
+            font-variation-settings: "wght" 440;
         }
         100%{
             font-variation-settings: "wght" 900;
