@@ -52,16 +52,60 @@ function compileSyllables(wordId){
 wordIds.forEach(compileSyllables);
 
 
+setTimeout(function(){ 
+
+    $("#back").click(function(){
+        $("#overlay").show();
+    });
+    $("#overlay").click(function(){
+        location.reload();
+    });
+
+}, 25100*0 );
+
+       
+
+
+
 
 
 $(".third_container").mousemove(function(event) {
     let cursorX = event.pageX / $(this).width();
-    let settingX = Math.floor(50 + cursorX * 900);
+    let settingX = Math.floor(-100 + cursorX * 1250);
     $(".alphabet").css("--tester", settingX);
 });
 
 
+var cursorElement = document.getElementById("guide");
+var container = document.getElementById("cont3");
+var x, y;
+document.addEventListener("mousemove", function(event){
+    x = event.clientX;
+    y = event.clientY;
+    var t = container.getBoundingClientRect();
+    var tx = x - 60;
+    var ty = y - t.top - 40;
+    if(tx < 0){
+        tx = 0;
+    }
+    var testright = window.innerWidth - 160; //Change for Scrollbar Width
+    if(tx > testright){
+        tx = testright;
+    }
+    var testbottom = window.innerHeight - t.top - 65;
+    if(ty > testbottom){
+        ty = testbottom;
+    }
+    var testtop = -70;
+    if(ty < testtop){
+        ty = testtop;
+    }
 
+    if (typeof x !== 'undefined'){
+        cursorElement.style.transform = 
+        "translate(" + tx + "px," + ty + "px)";
+    };
+}, false);
 
 
 
