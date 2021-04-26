@@ -1,17 +1,28 @@
+//-----------FIRST, FOURTH CONTAINER SETUP------------
+
 // const text = "Hesitantly, she placed her hand over a pale orange patch in the upper right corner of the map. That should be right. Pasadena. Obsidian lifted her hand and looked under it, then folded the map and put it back on the dashboard. He could read, she realized belatedly. He could probably write, too. Abruptly, she hated him— deep, bitter hatred. What did literacy mean to him— a grown man who played cops and robbers? But he was literate and she was not.";
+
+// const text = "As they passed blocks of burned, abandoned buildings, empty lots, and wrecked or stripped cars, he slipped a gold chain over his head and handed it to her. The pendant attached to it was a smooth, glassy, black rock. Obsidian. His name might be Rock or Peter or Black, but she decided to think of him as Obsidian. Even her sometimes useless memory would retain a name like Obsidian. She handed him her own name symbol — a pin in the shape of a large golden stalk of wheat. She had bought it long before the illness and the silence began. Now she wore it, thinking it was as close as she was likely to come to Rye. People like Obsidian who had not known her before probably thought of her as Wheat. Not that it mattered. She would never hear her name spoken again.";
+
+
 // const words = text.split(" ");
 
 // var textarray = [];
 // var i = 1;
 // function addMarkup(element) {
-//     // textarray.push('<p id="word' + i + '">' + element + '</p>');
-//     textarray.push('"word' + i +'"');
+//     textarray.push('<p id="ww' + i + '">' + element + ' </p>');
+//     // textarray.push('"ww' + i +'"');
 //     i++
 // }
 
 // words.forEach(addMarkup)
 // var finalTxt = textarray.join(", ");
 // console.log(finalTxt)
+
+
+
+//-----------FIRST CONTAINER--------------
+
 
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -66,7 +77,7 @@ setTimeout(function(){
        
 
 
-
+//---------THIRD CONTAINER--------------
 
 
 $(".third_container").mousemove(function(event) {
@@ -96,6 +107,10 @@ document.addEventListener("mousemove", function(event){
     if(ty > testbottom){
         ty = testbottom;
     }
+    if(y > t.bottom - 25){
+        ty = t.bottom - t.top - 65;
+        return;
+    }
     var testtop = -70;
     if(ty < testtop){
         ty = testtop;
@@ -107,6 +122,46 @@ document.addEventListener("mousemove", function(event){
     };
 }, false);
 
+
+
+// --------FOURTH CONTAINER-------------
+
+const wwIds = ["ww1", "ww2", "ww3", "ww4", "ww5", "ww6", "ww7", "ww8", "ww9", "ww10", "ww11", "ww12", "ww13", "ww14", "ww15", "ww16", "ww17", "ww18", "ww19", "ww20", "ww21", "ww22", "ww23", "ww24", "ww25", "ww26", "ww27", "ww28", "ww29", "ww30", "ww31", "ww32", "ww33", "ww34", "ww35", "ww36", "ww37", "ww38", "ww39", "ww40", "ww41", "ww42", "ww43", "ww44", "ww45", "ww46", "ww47", "ww48", "ww49", "ww50", "ww51", "ww52", "ww53", "ww54", "ww55", "ww56", "ww57", "ww58", "ww59", "ww60", "ww61", "ww62", "ww63", "ww64", "ww65", "ww66", "ww67", "ww68", "ww69", "ww70", "ww71", "ww72", "ww73", "ww74", "ww75", "ww76", "ww77", "ww78", "ww79", "ww80", "ww81", "ww82", "ww83", "ww84", "ww85", "ww86", "ww87", "ww88", "ww89", "ww90", "ww91", "ww92", "ww93", "ww94", "ww95", "ww96", "ww97", "ww98", "ww99", "ww100", "ww101", "ww102", "ww103", "ww104", "ww105", "ww106", "ww107", "ww108", "ww109", "ww110", "ww111", "ww112", "ww113", "ww114", "ww115", "ww116", "ww117", "ww118", "ww119", "ww120", "ww121", "ww122", "ww123", "ww124", "ww125", "ww126", "ww127", "ww128", "ww129", "ww130", "ww131", "ww132", "ww133", "ww134", "ww135", "ww136", "ww137", "ww138", "ww139", "ww140", "ww141", "ww142", "ww143", "ww144", "ww145"];
+
+
+
+$(".fourth_container").children().css("--newght", "410")
+
+    // -----CHANGE WORDS AND COLLAPSE------
+
+$(".fourth_container").children().on("mouseenter", function(){
+    let content = this.innerHTML;
+    content = content.trim();
+    content = content.replace(",", "");
+    content = content.replace(".", "");
+    content = RiTa.soundsLike(content);
+    nsubs = content.length;
+    rsub = Math.floor(Math.random() * (nsubs + 1));
+    content = content[rsub];
+    if (content == undefined) return;
+
+    var newght = $(this).css("--newght");
+    newght = parseInt(newght) + 30;
+    console.log(newght);
+    
+    this.innerHTML = content + " ";
+    $(this).css("--newght", newght);
+});
+
+    // ---------COLLAPSE ONLY------------
+
+// $(".fourth_container").children().on("mousemove", function(){
+//     var newght = $(this).css("--newght");
+//     newght = parseInt(newght) + 30;
+//     console.log(newght);
+    
+//     $(this).css("--newght", newght);
+// });
 
 
 

@@ -301,8 +301,19 @@ b{
 
 
 
+.fourth_container p{
+    display: inline;
+    font-family: "DisrepairMM";
+    font-variation-settings: "wght" var(--newght);
+    color:#eeeeee;
+    font-size: calc(1.5vw + 2.5vh);
+    line-height: 135%;
 
-
+}
+.fourth_container{
+    margin: 0em 1.5em 1em 2em;
+    padding-top: 1em;
+}
 
 
 
