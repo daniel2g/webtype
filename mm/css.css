@@ -5,6 +5,7 @@
 }
 
 :root {
+    --myblu: #0000ff;
     --syllables: 0;
     margin: 0;
     padding: 0;
@@ -33,7 +34,7 @@ body{
       border-style: solid;
       border-color: #eee;
       border-width: 3px;
-    background: blue;
+    background: var(--myblu);
   }
 
   
@@ -45,7 +46,7 @@ body{
 .first_outer_container{
     height: 100vh;
     margin: 0;
-    background-color: blue;
+    background-color: var(--myblu);
     /* background-image: url(speech-sounds-bkg_2.jpg);
     background-size: cover; */
 }
@@ -90,8 +91,8 @@ body{
 
     opacity: 0%;
     animation: 
-        addword 0.15s ease-in calc(var(--syllables) * 0.12s) forwards,
-        collapse 1s ease-in calc(var(--syllables) * 0.12s + 0.5s) forwards;
+        addword 0.15s ease-in calc(var(--syllables) * 0.15s) forwards,
+        collapse 1s ease-in calc(var(--syllables) * 0.15s + 0.5s) forwards;
 
 }
 
@@ -105,13 +106,54 @@ body{
     margin: 25px auto 0 auto;
     font-size: 18px;
     animation: 
-        addword 0.5s ease-in calc(var(--syllables) * 0.12s) forwards;
+        addword 0.5s ease-in calc(var(--syllables) * 0.15s) forwards;
+
+}
+
+#citealpha{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+
+    margin: 25px auto 0 2em;
+    font-size: 18px;
+
+}
+
+#citefour{
+
+    display: flex;
+    flex-direction: row;
+    color: #eeeeee;
+    margin: 25px auto 0 2em;
+    font-size: 18px;
+
+}
+
+#citefive{
+
+    display: flex;
+    flex-direction: row;
+    color: var(--myblu);
+    margin: 25px auto 0 0;
+    font-size: 18px;
 
 }
 
 .sep{
     display: inline-block;
-    width: calc(50vw - 220px);
+    width: calc(50vw - 230px);
+    min-width: 1em;
+}
+.septwo{
+    display: inline-block;
+    width: calc(50vw - 235px);
+    min-width: 1em;
+}
+
+.sepfour{
+    display: inline-block;
+    width: calc(50vw - 360px);
     min-width: 1em;
 }
 
@@ -155,7 +197,7 @@ body{
     height: 50vh;
 
     background-color: #eeeeee;
-    color: blue;
+    color: var(--myblu);
 
     text-align: center;
     font-size: 18px;
@@ -167,7 +209,7 @@ body{
 .second_container_b{
     height: 50vh;
 
-    background-color: blue;
+    background-color: var(--myblu);
     color: #eeeeee;
     
     padding: 6vh 1.5em 1em 2em;
@@ -232,7 +274,7 @@ a:hover{
 }
 .sep2{
     display: inline-block;
-    width: calc(50vw - 340px);
+    width: calc(50vw - 375px);
     min-width: 1em;
 }
 
@@ -253,7 +295,7 @@ a:hover{
 .third_container{
     height: 100vh;
     background-color: #eeeeee;
-    color: blue;
+    color: var(--myblu);
     cursor: none;
 }
 
@@ -288,8 +330,9 @@ a:hover{
 }
 
 .typedesc{
-    margin-top: calc(18px + 0.5vw + 0.8vh);;
-    font-size: calc(18px + 0.5vw + 0.8vh);
+    margin-top: calc(18px + 0.3vw + 0.5vh);
+    margin-bottom: calc(18px + 0.6vw + 1vh);
+    font-size: calc(18px + 0.3vw + 0.5vh);
     letter-spacing: -0.05vh;
 }
 b{
@@ -306,7 +349,7 @@ b{
     font-family: "DisrepairMM";
     font-variation-settings: "wght" var(--newght);
     color:#eeeeee;
-    font-size: calc(1.5vw + 2.5vh);
+    font-size: calc(1.3vw + 2.5vh);
     line-height: 135%;
 
 }
@@ -314,6 +357,63 @@ b{
     margin: 0em 1.5em 1em 2em;
     padding-top: 1em;
 }
+
+
+
+
+
+.last_container{
+    height: calc(100vh - 2em);
+    margin: 0;
+    padding:1em 1.5em 1em 2em;
+    background-color: #eeeeee;
+}
+
+
+
+textarea{
+    color: var(--myblu);
+    letter-spacing: -0.02em;
+    word-spacing: normal;
+
+    text-indent: 0px;
+
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    background-color: #eeeeee;
+
+    flex-direction: column;
+    resize:none;
+    cursor: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    column-count: initial !important;
+    margin: 0em;
+    font: inherit;
+    border-width: 0px;
+    border-style: none;
+    border-image: initial;
+    padding: 0px;
+}
+
+
+textarea:focus {
+    outline: 0px solid transparent;
+    border-width: 0px;
+    border-style:none;
+}
+::placeholder {
+    color: var(--myblu);
+    opacity: 1;
+  }
+
+#userentry{
+    width: calc(100vw - 1.5em);
+    height: 80vh;
+    font-size: 4em;
+}
+
 
 
 
@@ -358,6 +458,7 @@ b{
     }
     .second_container_b{
         padding-top: 1em;
+        padding-left: 1em;
     }
     .second_container_t{
         padding-top: 10vh;
@@ -384,6 +485,37 @@ b{
 
     }
 
+    #citealpha{
+        margin-left:0;
+    }
+
+    .alphamore{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .remove{
+        display: none;
+    }
+
+    .typedesc{
+        margin-bottom: 10vh;
+    }
+
+
+
+    .fourth_container p{
+
+        font-size: calc(2vw + 1.5vh);
+    
+    }
+    .fourth_container{
+
+        margin-left: 1em;
+    
+    }
+
 
 
 
@@ -391,10 +523,20 @@ b{
 }
 
 @media (max-width: 900px) {
-.typedescbreak{
-    display: none;
+    .typedescbreak{
+        display: none;
+    }
+    .typedesc{
+        padding: 10vh 10px 0 10px;
+    }
 }
-.typedesc{
-    padding: 10vh 10px 0 10px;
-}
+
+
+
+@media (max-width: 411px) {
+    #citefour{
+        flex-direction: column;
+        text-align: center;
+        margin-left: 0;
+    }
 }
