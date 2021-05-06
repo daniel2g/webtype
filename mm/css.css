@@ -138,6 +138,8 @@ body{
     margin: 25px auto 0 0;
     font-size: 18px;
 
+    vertical-align:baseline;
+
 }
 
 .sep{
@@ -414,11 +416,6 @@ textarea:focus {
     font-size: 4em;
 }
 
-#citefive{
-    vertical-align:baseline;
-    display: inline;
-    color: var(--myblu);
-}
 
 .parasmall{
     font-size: 16px;

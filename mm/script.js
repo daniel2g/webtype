@@ -200,6 +200,35 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
 
+
+    $("textarea").keypress(function(e){
+        if (e.which === 32) {
+    
+            var content = this.value;
+            content = content.split(" ");
+            var currentWord = content.pop();
+            
+            currentWord = currentWord.trim();
+            currentWord = currentWord.replace(",", "");
+            currentWord = currentWord.replace(".", "");
+            var newWord = RiTa.soundsLike(currentWord);
+                
+            numberOfWords = newWord.length;
+            randomWordIndex = Math.floor(Math.random() * (numberOfWords + 1));
+    
+            newWord = newWord[randomWordIndex];
+            if(newWord === undefined){
+                newWord = currentWord;
+            }
+
+            var newContent = content.join(" ") + " " + newWord;
+
+            // console.log(newContent)
+
+            this.value = newContent;
+    
+        }
+    });
     
 
 
