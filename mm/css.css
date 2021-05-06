@@ -414,7 +414,26 @@ textarea:focus {
     font-size: 4em;
 }
 
+#citefive{
+    vertical-align:baseline;
+    display: inline;
+    color: var(--myblu);
+}
 
+.parasmall{
+    font-size: 16px;
+    vertical-align: baseline;
+    display: inline;
+    color: var(--myblu);
+    cursor:default;
+}
+.paranum{
+    font-size: 20px;
+    vertical-align: baseline;
+    display: inline;
+    color: var(--myblu);
+    cursor: ew-resize;
+}
 
 
 
