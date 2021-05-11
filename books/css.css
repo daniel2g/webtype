@@ -1,174 +1,119 @@
 body{
-    background-color: #eee;
-}
-
-.splash{
-    font-family: "matrix-ii-script";
-    font-weight: 700;
-    font-style: normal;
-
-    font-size: 70px;
-    letter-spacing: -2px;
-    line-height: 1.1;
-
-    transform: rotate(-7deg);
-
-    width: 95vw;
-    overflow: hidden;
-
-    margin-block-end: 30px;
-}
-.head1, .head2, .head3, .head4{
-    margin-block-start: 0;
-    margin-block-end: 0;
-}
-.head1{
-    margin-left: 100px;
-}
-.head2{
-    font-size: 100px;
-    letter-spacing: -3px;
-    position: relative;
-}
-.head3{
-    font-size: 100px;
-    letter-spacing: -3px;
-    margin-left: 50px;
-}
-.head4{
-    margin-left: 500px;
-}
-
-.head1::after{
-    content: "A Bibliography of";
-    position: absolute;
-    left: 100px;
-    font-family: matrix-ii-display-hilite-scr, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: turquoise;
-}
-.head2::after{
-    content: "Trans & Nonbinary";
-    position: absolute;
-    left: 0;
-    font-family: matrix-ii-display-hilite-scr, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: turquoise;
-}
-.head3::after{
-    content: "Representation";
-    position: absolute;
-    left: 50px;
-    font-family: matrix-ii-display-hilite-scr, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: turquoise;
-}
-.head4::after{
-    content: "in Picture Books";
-    position: absolute;
-    left: 500px;
-    font-family: matrix-ii-display-hilite-scr, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: turquoise;
-}
-
-
-
-.shelf{
+    background-color:#ceffee;
+    height: 80vh;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    --hgt: 45vh;
-    --transition: opacity 0.2s ease-in-out;
-    --beforesize: 12px;
-    --mainsize: 18px;
-    --titlesize: 24px;
-}
-.entry{
-    margin: 1em;
-    display: flex;
-    width: auto;
-    height: var(--hgt);
-    position: relative;
-}
-.container{
-    opacity: 0;
-    background-color: rgba(64, 224, 208, 1);
-    position: absolute;
-    width: auto;
-    height: var(--hgt);
-    transition: var(--transition);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
 
-    font-family: "matrix-ii-script";
-    font-weight: 400;
+    font-family: "matrix-ii";
+    font-weight: 500;
     font-style: normal;
+    font-size: 16px;
+}
 
-    font-size: var(--mainsize);
-}
-.container:hover{
-    opacity: 1;
-    transition: var(--transition);
-}
 img{
-    display: block;
-    object-fit: contain;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    z-index: -100;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+}
+.cover{
+    width: 220px;
+    position: fixed;
+    -webkit-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.5); 
+    box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.5);
 }
 
-
-a{
-    width: auto;
-    text-decoration: none;
-    /* text-decoration-thickness: 1px; */
-    color: black; 
-    /* background-image: linear-gradient(to bottom, transparent 0.18em, #b9f3ed 0.18em, #b9f3ed 1.1em, transparent 1.1em); */
-    background-color: rgba(185,243,237, 1);
+.cover:hover{
+    cursor: grab;
 }
 
-.container a{
-    display: flex;
-    justify-content: center;
+.cover:active{
+    cursor: grabbing;
 }
-.auth::before{
-    display: flex;
-    justify-content: center;
-    content: "Written by";
-    font-size: var(--beforesize);
-}
-.illus::before{
-    display: flex;
-    justify-content: center;
-    content: "Illustrated by";
-    font-size: var(--beforesize);
-}
-.pub::before{
-    display: flex;
-    justify-content: center;
-    content: "Published by";
-    font-size: var(--beforesize);
-}
-.title, .auth, .illus, .pub{
-    margin-block-start: 0px;
-    text-align: center;
 
-}
 .title{
-    font-size: var(--titlesize);
+
+    font-family: "matrix-ii-script";
+    font-weight: 600;
+    font-style: normal;
+    font-size: 19px;
+    margin: 1em 0 0 1em;
+    width: 220px;
+
 }
-.year{
-    margin-block-start: 0px;
-    margin-block-end: 0px;
+.small{
+    font-size: 14px;
+    margin-top: 2em;
+    margin-left: 1.5em;
+    line-height: 20px;
+}
+.small_back{
+    font-size: 14px;
+    margin-top: 2em;
+    margin-left: 1.5em;
+    line-height: 40px;
+    display: none;
+}
+
+.logo{
+    margin-left: -5px;
+
+}
+
+.aboutbutton{
+    cursor: pointer;
+}
+
+.about, .book{
+    box-sizing: border-box;
+    position: fixed;
+    background-color: #ceffee;
+    width: calc(100vw - 260px);
+    height: 100vh;
+    top:0;
+    right:0;
+    z-index: 5000;
+    display: none;
+    padding: 1em 1em 1em 5em;
+}
+
+.align_title{
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+    margin: 2em 0 3em 0;
+}
+.book_cover{
+    height: 100px;
+    -webkit-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.5); 
+    box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.5);
+}
+.book_title{
+    padding: 0 0 0 1em;
+    font-family: "matrix-ii-script";
+    font-weight: 500;
+    font-style: normal;
+    font-size: 48px;
+    letter-spacing: -0.03em;
+    line-height: 0;
+}
+.book a{
+    font-family: "matrix-ii-script";
+    font-weight: 600;
+    font-style: normal;
+    font-size: 19px;
+    letter-spacing: -0.02em;
+    line-height: 0;
+    padding: 0 0.1em 0 0.1em;
+    text-decoration: none;
+    color: black;
+}
+.description{
+    width: 36em;
+}
+iframe{
+    height: 180px;
+    width: 320px;
+    margin-top: 2em;
+    -webkit-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.5); 
+    box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.5);
 }
