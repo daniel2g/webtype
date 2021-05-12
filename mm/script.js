@@ -195,14 +195,25 @@ document.addEventListener("DOMContentLoaded", function(){
 
     var inputField = document.getElementById("userentry");
 
-    inputField.addEventListener('mouseover', function() {
+    function inputFieldFocus(){
+        if (document.activeElement.tagName == "INPUT") return;
         inputField.focus();
-    });
+    }
+    inputField.addEventListener("mouseover", inputFieldFocus);
+    
 
 
 
-    $("textarea").keypress(function(e){
-        if (e.which === 32) {
+
+
+    function speakWord(word){
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.rate = 0.8;
+        speechSynthesis.speak(utterance);
+    };
+
+    $("textarea").keypress(function(event){
+        if (event.which === 32) {
     
             var content = this.value;
             content = content.split(" ");
@@ -211,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function(){
             currentWord = currentWord.trim();
             currentWord = currentWord.replace(",", "");
             currentWord = currentWord.replace(".", "");
-            var newWord = RiTa.soundsLike(currentWord);
+            var newWord = RiTa.spellsLike(currentWord);
                 
             numberOfWords = newWord.length;
             randomWordIndex = Math.floor(Math.random() * (numberOfWords + 1));
@@ -221,15 +232,32 @@ document.addEventListener("DOMContentLoaded", function(){
                 newWord = currentWord;
             }
 
-            var newContent = content.join(" ") + " " + newWord;
-
-            // console.log(newContent)
-
-            this.value = newContent;
+            speakWord(newWord);
+            
+            
     
         }
     });
-    
+
+
+
+
+    $("#fsize").on("change", function() {
+        let value = $(this).val();
+        $("#userentry").css("font-size", value + "px");
+    });
+
+    $("#tracking").on("change", function() {
+        let value = $(this).val();
+        $("#userentry").css("letter-spacing", value * 0.1 + "px");
+    });
+
+    $("#varaxis").on("change", function() {
+        let value = $(this).val();
+        $("#userentry").css('font-variation-settings', '"wght" ' + value * 10);
+    });
+
+
 
 
 

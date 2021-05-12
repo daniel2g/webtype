@@ -375,7 +375,7 @@ b{
 
 textarea{
     color: var(--myblu);
-    letter-spacing: -0.02em;
+    letter-spacing: -1px;
     word-spacing: normal;
 
     text-indent: 0px;
@@ -411,9 +411,33 @@ textarea:focus {
   }
 
 #userentry{
-    width: calc(100vw - 1.5em);
-    height: 80vh;
-    font-size: 4em;
+    width: calc(100vw - 60px);
+    font-size: 60px;
+    height: calc(100vh - 85px);
+    margin-bottom: -10px;
+}
+
+input{
+    color: var(--myblu);
+    letter-spacing: -1px;
+    word-spacing: normal;
+
+    text-indent: 0px;
+
+    background-color: #eeeeee;
+
+    margin: 0em;
+    font: inherit;
+    border-width: 0px;
+    border-style: none;
+    border-image: initial;
+    padding: 0 0 0 5px;
+    width: 85px;
+}
+input:focus{
+    outline: 1px solid var(--myblu);
+    border-width: 0px;
+    border-style:none;
 }
 
 
@@ -425,11 +449,11 @@ textarea:focus {
     cursor:default;
 }
 .paranum{
-    font-size: 20px;
+    font-size: 22px;
     vertical-align: baseline;
     display: inline;
     color: var(--myblu);
-    cursor: ew-resize;
+    cursor: default;
 }
 
 
@@ -532,6 +556,10 @@ textarea:focus {
     
     }
 
+    #citefour{
+        margin: 25px auto 0 1em;
+    }
+
 
 
 
@@ -554,5 +582,19 @@ textarea:focus {
         flex-direction: column;
         text-align: center;
         margin-left: 0;
+    }
+}
+
+@media (max-width: 850px) {
+    #userentry{
+        height: calc(100vh - 100px);
+
+    }
+}
+
+@media (max-width: 460px) {
+    #userentry{
+        height: calc(100vh - 120px);
+
     }
 }
