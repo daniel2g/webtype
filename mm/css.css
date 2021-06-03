@@ -4,6 +4,14 @@
     font-weight: 100 900;
 }
 
+@font-face {
+    font-family: "arrows";
+    src: url("arrows-webfont.woff") format("woff");
+    /* font-weight: 400; */
+}
+
+
+
 :root {
     --myblu: #0000ff;
     --syllables: 0;
@@ -80,6 +88,11 @@ body{
     opacity: 100%;
     animation: none;
 }
+
+/* .arrrowsfont{
+    font-family: "arrows" !important;
+    color: palevioletred !important;
+} */
 
 .first_container p{
     display: inline;
@@ -455,6 +468,7 @@ input:focus{
     color: var(--myblu);
     cursor: default;
 }
+
 
 
 
