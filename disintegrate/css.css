@@ -51,6 +51,28 @@ body{
 
 
 
+
+
+
+.new_nav_container{
+    position: fixed; 
+    bottom: 32px; 
+    left: 32px;
+    display: flex;
+    flex-direction: row;
+}
+
+.button{
+    cursor: pointer;
+}
+
+.new_nav_right{
+    position: fixed;
+    right: 2em;
+}
+
+
+
 .first_outer_container{
     height: 100vh;
     margin: 0;
@@ -69,13 +91,6 @@ body{
     margin-bottom: -100vh;
     position: relative;
     display: none;
-}
-
-#overlay, #back{
-    cursor:default;
-}
-.second_container_t, .second_container_b, .cont4{
-    cursor: default;
 }
 
 .first_container_fixed{
@@ -164,18 +179,18 @@ body{
 
 .sep{
     display: inline-block;
-    width: calc(50vw - 288px);
+    width: calc(50vw - 230px);
     min-width: 1em;
 }
 .septwo{
     display: inline-block;
-    width: calc(50vw - 270px);
+    width: calc(50vw - 235px);
     min-width: 1em;
 }
 
 .sepfour{
     display: inline-block;
-    width: calc(50vw - 343px);
+    width: calc(50vw - 360px);
     min-width: 1em;
 }
 
@@ -225,6 +240,8 @@ body{
     font-size: 18px;
     padding-top: 6vh;
     box-sizing: border-box; 
+
+    display: none;
     
 }
 
@@ -236,6 +253,8 @@ body{
     
     padding: 6vh 1.5em 1em 2em;
     box-sizing: border-box; 
+
+    display: none;
 
 }
 
@@ -285,10 +304,12 @@ body{
 a{
     color: inherit;
     text-decoration: none;
+    font-size: 18px;
+    white-space: nowrap;
 }
-a:hover{
+/* a:hover{
     text-decoration: underline;
-}
+} */
 .second_foot{
     margin: 6vh auto 0 auto;
     font-size: 18px;
@@ -319,6 +340,8 @@ a:hover{
     background-color: #eeeeee;
     color: var(--myblu);
     cursor: none;
+
+    display: none;
 }
 
 .sampletext{
@@ -374,15 +397,15 @@ b{
     font-size: calc(1.3vw + 2.5vh);
     line-height: 135%;
 
-    /* cursor: crosshair; */
-
 }
 .fourth_container{
     margin: 0em 1.5em 1em 2em;
-    padding-top: 1.5em;
+    padding-top: 1em;
 }
 
-
+#fourth_page{
+    display: none;
+}
 
 
 
@@ -391,6 +414,8 @@ b{
     margin: 0;
     padding:1em 1.5em 1em 2em;
     background-color: #eeeeee;
+
+    display: none;
 }
 
 
@@ -440,12 +465,6 @@ textarea:focus {
 }
 
 input{
-
-    margin: 0em;
-
-}
-
-input#fsize{
     color: var(--myblu);
     letter-spacing: -1px;
     word-spacing: normal;
@@ -461,12 +480,8 @@ input#fsize{
     border-image: initial;
     padding: 0 0 0 5px;
     width: 85px;
-
-    
-
-    font-size: 27px;
 }
-input#fsize:focus{
+input:focus{
     outline: 1px solid var(--myblu);
     border-width: 0px;
     border-style:none;
@@ -474,7 +489,7 @@ input#fsize:focus{
 
 
 .parasmall{
-    font-size: 18px;
+    font-size: 16px;
     vertical-align: baseline;
     display: inline;
     color: var(--myblu);
@@ -604,7 +619,7 @@ input#fsize:focus{
         display: none;
     }
     .typedesc{
-        padding: inherit 10px 0 10px;
+        padding: 10vh 10px 0 10px;
     }
 }
 
@@ -615,10 +630,6 @@ input#fsize:focus{
         flex-direction: column;
         text-align: center;
         margin-left: 0;
-    }
-
-    .sepfour{
-        display: none;
     }
 }
 
@@ -631,12 +642,7 @@ input#fsize:focus{
 
 @media (max-width: 460px) {
     #userentry{
-        height: calc(100vh - 136px);
+        height: calc(100vh - 120px);
 
     }
 }
-
-
-
-
-

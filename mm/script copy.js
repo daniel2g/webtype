@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if(tx < 0){
             tx = 0;
         }
-        var testright = window.innerWidth - 166; //Change for Scrollbar Width
+        var testright = window.innerWidth - 160; //Change for Scrollbar Width
         if(tx > testright){
             tx = testright;
         }
@@ -214,50 +214,36 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     function speakWord(word){
-        let utterance = new SpeechSynthesisUtterance(word);
-        utterance.rate = 0.6;
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.rate = 0.8;
         speechSynthesis.speak(utterance);
     };
 
-
-
-    const textarea = document.getElementById("userentry");
-    var transformationArray = [];
-
-
-
-    $("#speakbtn").click(function(){
-
-        transformationArray = [];
-
-        var content = textarea.value;
-        content = content.split(" ");
-
-        content.forEach(word => {
-            word = word.trim();
-            word = word.replace(",", "");
-            word = word.replace(".", "");
-
-            let newWord = RiTa.spellsLike(word);
-            let numberOfWords = newWord.length;
-            let randomWordIndex = Math.floor(Math.random() * (numberOfWords + 1));
+    $("textarea").keypress(function(event){
+        if (event.which === 32) {
+    
+            var content = this.value;
+            content = content.split(" ");
+            var currentWord = content.pop();
+            
+            currentWord = currentWord.trim();
+            currentWord = currentWord.replace(",", "");
+            currentWord = currentWord.replace(".", "");
+            var newWord = RiTa.spellsLike(currentWord);
+                
+            numberOfWords = newWord.length;
+            randomWordIndex = Math.floor(Math.random() * (numberOfWords + 1));
     
             newWord = newWord[randomWordIndex];
             if(newWord === undefined){
-                newWord = word;
+                newWord = currentWord;
             }
 
-            transformationArray.push(newWord);
-
-        });
+            speakWord(newWord);
             
-       
-        let newSentence = transformationArray.join(" ");
-        console.log(newSentence);
-
-        speakWord(newSentence);
             
-
+    
+        }
     });
 
 
@@ -265,35 +251,17 @@ document.addEventListener("DOMContentLoaded", function(){
 
     $("#fsize").on("change", function() {
         let value = $(this).val();
-        // value = Math.pow(value, 4)/100 + 2;
         $("#userentry").css("font-size", value + "px");
     });
 
     $("#tracking").on("change", function() {
         let value = $(this).val();
-        $("#userentry").css("letter-spacing", value * 0.002 + "em");
+        $("#userentry").css("letter-spacing", value * 0.1 + "px");
     });
 
     $("#varaxis").on("change", function() {
         let value = $(this).val();
         $("#userentry").css('font-variation-settings', '"wght" ' + value * 10);
-    });
-
-    $("#outline").on("change", function() {
-        if ($("#outline:checked").length == 1){
-            $("#userentry").css({
-                "-webkit-text-stroke-width": "1px",
-                "-webkit-text-stroke-color": "var(--myblu)",
-                "-webkit-text-fill-color": "#eeeeee"
-            });
-        };
-        if ($("#outline:checked").length == 0){
-            $("#userentry").css({
-                "-webkit-text-stroke-width": "",
-                "-webkit-text-stroke-color": "",
-                "-webkit-text-fill-color": ""
-            });
-        };
     });
 
 

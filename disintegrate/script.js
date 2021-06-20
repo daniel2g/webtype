@@ -31,6 +31,43 @@ document.addEventListener("DOMContentLoaded", function(){
     $(".arrowsfont").css("font-family", "arrows");
 
 
+    $("#nav_page_one_fw, #nav_page_one_fw_first").click(function(){
+        $(".pageone").css("display", "none");
+        $(".second_container_t, .second_container_b").show();
+    });
+
+
+
+
+    $("#nav_page_two_fw").click(function(){
+        $(".second_container_t, .second_container_b").css("display", "none");
+        $("#cont3").show();
+    });
+
+    $("#nav_page_two_back").click(function(){
+        $(".second_container_t, .second_container_b").css("display", "none");
+        location.reload();
+    });
+
+
+    
+
+    $("#nav_page_three_fw").click(function(){
+        $("#cont3").css("display", "none");
+        $("#fourth_page").show();
+    });
+
+    $("#nav_page_three_back").click(function(){
+        $("#cont3").css("display", "none");
+        $(".second_container_t, .second_container_b").show();
+    });
+
+
+
+
+
+
+
 
 
     const wordIds = ["word1", "word2", "word3", "word4", "word5", "word6", "word7", "word8", "word9", "word10", "word11", "word12", "word13", "word14", "word15", "word16", "word17", "word18", "word19", "word20", "word21", "word22", "word23", "word24", "word25", "word26", "word27", "word28", "word29", "word30", "word31", "word32", "word33", "word34", "word35", "word36", "word37", "word38", "word39", "word40", "word41", "word42", "word43", "word44", "word45", "word46", "word47", "word48", "word49", "word50", "word51", "word52", "word53", "word54", "word55", "word56", "word57", "word58", "word59", "word60", "word61", "word62", "word63", "word64", "word65", "word66", "word67", "word68", "word69", "word70", "word71", "word72", "word73", "word74", "word75", "word76", "word77", "word78", "word79", "word80", "word81", "word82", "cite"];
@@ -70,16 +107,16 @@ document.addEventListener("DOMContentLoaded", function(){
     wordIds.forEach(compileSyllables);
 
 
-    setTimeout(function(){ 
+  
 
-        $("#back").click(function(){
+    $("#repair_button").click(function(){
             $("#overlay").show();
-        });
-        $("#overlay").click(function(){
+    });
+    $("#restart_button").click(function(){
             location.reload();
-        });
+    });
 
-    }, 25100*0 );
+   
 
         
 
@@ -106,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if(tx < 0){
             tx = 0;
         }
-        var testright = window.innerWidth - 166; //Change for Scrollbar Width
+        var testright = window.innerWidth - 160; //Change for Scrollbar Width
         if(tx > testright){
             tx = testright;
         }
@@ -128,6 +165,12 @@ document.addEventListener("DOMContentLoaded", function(){
             "translate(" + tx + "px," + ty + "px)";
         };
     }, false);
+
+    $("#nav_page_three_back, #nav_page_three_fw").mouseenter(function(){
+        $("#guide").css("opacity", "0");
+    }).mouseleave(function(){
+        $("#guide").css("opacity", "1");
+    });
 
 
 
@@ -214,50 +257,36 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     function speakWord(word){
-        let utterance = new SpeechSynthesisUtterance(word);
-        utterance.rate = 0.6;
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.rate = 0.8;
         speechSynthesis.speak(utterance);
     };
 
-
-
-    const textarea = document.getElementById("userentry");
-    var transformationArray = [];
-
-
-
-    $("#speakbtn").click(function(){
-
-        transformationArray = [];
-
-        var content = textarea.value;
-        content = content.split(" ");
-
-        content.forEach(word => {
-            word = word.trim();
-            word = word.replace(",", "");
-            word = word.replace(".", "");
-
-            let newWord = RiTa.spellsLike(word);
-            let numberOfWords = newWord.length;
-            let randomWordIndex = Math.floor(Math.random() * (numberOfWords + 1));
+    $("textarea").keypress(function(event){
+        if (event.which === 32) {
+    
+            var content = this.value;
+            content = content.split(" ");
+            var currentWord = content.pop();
+            
+            currentWord = currentWord.trim();
+            currentWord = currentWord.replace(",", "");
+            currentWord = currentWord.replace(".", "");
+            var newWord = RiTa.spellsLike(currentWord);
+                
+            numberOfWords = newWord.length;
+            randomWordIndex = Math.floor(Math.random() * (numberOfWords + 1));
     
             newWord = newWord[randomWordIndex];
             if(newWord === undefined){
-                newWord = word;
+                newWord = currentWord;
             }
 
-            transformationArray.push(newWord);
-
-        });
+            speakWord(newWord);
             
-       
-        let newSentence = transformationArray.join(" ");
-        console.log(newSentence);
-
-        speakWord(newSentence);
             
-
+    
+        }
     });
 
 
@@ -265,35 +294,17 @@ document.addEventListener("DOMContentLoaded", function(){
 
     $("#fsize").on("change", function() {
         let value = $(this).val();
-        // value = Math.pow(value, 4)/100 + 2;
         $("#userentry").css("font-size", value + "px");
     });
 
     $("#tracking").on("change", function() {
         let value = $(this).val();
-        $("#userentry").css("letter-spacing", value * 0.002 + "em");
+        $("#userentry").css("letter-spacing", value * 0.1 + "px");
     });
 
     $("#varaxis").on("change", function() {
         let value = $(this).val();
         $("#userentry").css('font-variation-settings', '"wght" ' + value * 10);
-    });
-
-    $("#outline").on("change", function() {
-        if ($("#outline:checked").length == 1){
-            $("#userentry").css({
-                "-webkit-text-stroke-width": "1px",
-                "-webkit-text-stroke-color": "var(--myblu)",
-                "-webkit-text-fill-color": "#eeeeee"
-            });
-        };
-        if ($("#outline:checked").length == 0){
-            $("#userentry").css({
-                "-webkit-text-stroke-width": "",
-                "-webkit-text-stroke-color": "",
-                "-webkit-text-fill-color": ""
-            });
-        };
     });
 
 
